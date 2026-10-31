@@ -1,0 +1,41 @@
+/* Base reset that the Claude Artifact viewer applied around this page; kept so the standalone site renders the same. */
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{margin:0}
+body{font:14px system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: one narrow reading column; a navy title band, a downloads strip, then the eight sections with the architecture figure after section 3. */
+:root{--bg:#f5f7fa;--fg:#17233a;--muted:#55657a;--navy:#0b2545;--mid:#13315c;--cyan:#0b8aa3;--tint:#e4f3f7;--line:#d5dee8;--card:#ffffff;--band:#0b2545;--bandfg:#ffffff;--bandsub:#c5d8ea;--th:#13315c;--thfg:#ffffff;--alt:#eef3f8;--figbg:#ffffff;--font-body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1524;--fg:#e4ebf4;--muted:#9fb0c4;--navy:#9cc7f0;--mid:#7fb2e4;--cyan:#4cc3dc;--tint:#12313c;--line:#26364d;--card:#111d30;--band:#0a1a30;--bandfg:#ffffff;--bandsub:#b5cbe2;--th:#1d3a63;--thfg:#f1f6fb;--alt:#0f1a2c;--figbg:#ffffff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1524;--fg:#e4ebf4;--muted:#9fb0c4;--navy:#9cc7f0;--mid:#7fb2e4;--cyan:#4cc3dc;--tint:#12313c;--line:#26364d;--card:#111d30;--band:#0a1a30;--bandfg:#ffffff;--bandsub:#b5cbe2;--th:#1d3a63;--thfg:#f1f6fb;--alt:#0f1a2c;--figbg:#ffffff;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:780px;margin:0 auto}
+.band{background:var(--band);color:var(--bandfg);border-radius:10px;padding:22px 24px 20px;border-bottom:4px solid var(--cyan)}
+.kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7fd3e6;margin:0 0 10px}
+.band h1{font-size:clamp(1.3rem,3.6vw,1.75rem);line-height:1.25;margin:0 0 12px;font-weight:600;text-wrap:balance}
+.meta{margin:0;font-size:.86rem;color:var(--bandsub)}
+.dl{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+.dl a{display:inline-flex;flex-direction:column;gap:2px;padding:12px 18px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);text-decoration:none;min-width:200px}
+.dl a:hover,.dl a:focus-visible{border-color:var(--cyan);outline:2px solid var(--cyan);outline-offset:2px}
+.dl strong{font-size:.98rem}.dl span{font-family:var(--font-mono);font-size:.76rem;color:var(--muted)}
+h2{font-size:1.28rem;color:var(--navy);margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline;text-wrap:balance}
+h2 span{font-family:var(--font-mono);font-size:.85rem;color:var(--cyan);font-weight:500}
+h3{font-size:1rem;color:var(--mid);margin:20px 0 6px}
+p{margin:0 0 10px;max-width:68ch}
+ol,ul{margin:4px 0 12px;padding-left:22px}ol li,ul li{margin-bottom:4px;max-width:68ch}
+.tw{overflow-x:auto;margin:8px 0 14px;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+th{background:var(--th);color:var(--thfg);text-align:left;padding:8px 12px;font-weight:600}
+td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even) td{background:var(--alt)}
+td ul{margin:0;padding-left:16px}
+table.ctr th,table.ctr td{text-align:center}
+.call{background:var(--tint);border:1px solid var(--line);border-radius:8px;padding:10px 14px;max-width:none}
+.call strong{color:var(--navy);margin-right:6px}
+figure{margin:28px 0 8px}
+.fig{overflow-x:auto;background:var(--figbg);border:1px solid var(--line);border-radius:10px;padding:12px}
+.fig svg{display:block;width:100%;min-width:560px;height:auto}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:8px;max-width:68ch}
+.refs{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;padding-top:12px;max-width:none}
+@media (prefers-reduced-motion:no-preference){a{transition:border-color .15s}}
